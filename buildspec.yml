@@ -1,5 +1,8 @@
 version: 0.2
-
+env:
+  parameter-store:
+    DOCKER_USER: /CodeBuild/DOCKER_USER
+    DOCKER_PASSWORD: /CodeBuild/DOCKER_PASSWORD
 phases:
   install:
     runtime-versions:
@@ -17,3 +20,6 @@ phases:
     commands:
        - echo "pushing image to docker hub"
        - docker push $DOCKER_USER/buildcode:buidcode1
+artifacts:
+   
+    

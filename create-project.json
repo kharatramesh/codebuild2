@@ -3,12 +3,18 @@
     "description": "gitproject1",
     "source": {
       "type": "GITHUB",
-      "location": "https://github.com/kharatramesh/codebuild1",
-      "gitCloneDepth": "5"
+      "location": "https://github.com/kharatramesh/codebuild1"
+      
     },
     "environment": {
         "type": "LINUX_CONTAINER",
         "image": "aws/codebuild/standard:5.0",
         "computeType": "BUILD_GENERAL1_LARGE"
+    },
+    
+    "serviceRole": "codebuildrole",
+    
+    "artifacts": {
+      "type": "NO_ARTIFACTS"
     }
 }
