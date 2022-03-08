@@ -5,6 +5,8 @@ env:
     DOCKER_PASSWORD: /CodeBuild/DOCKER_PASSWORD
 phases:
   install:
+    runtime-version:
+      docker: 18
     commands:
       - echo "Installing Docker"
       - cat /etc/os-release
