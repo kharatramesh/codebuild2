@@ -6,7 +6,7 @@ env:
 phases:
   install:
     runtime-versions:
-      docker: 18
+      php: latest
     commands:
       - echo "Installing Docker"
       - cat /etc/os-release
