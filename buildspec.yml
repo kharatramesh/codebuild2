@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      php: 7.3
+  pre_build:
+    commands:
+      - echo "Login to docker hub"
+      - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+  build:
+    commands:
+      - echo "starting creating image"
+      - docker build . -t $DOCKER_USER/buildcode:buidcode1
+      
+  post_build:
+    commands:
+       - echo "pushing image to docker hub"
+       - docker push $DOCKER_USER/buildcode:buidcode1
