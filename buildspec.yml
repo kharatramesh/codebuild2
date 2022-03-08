@@ -5,8 +5,6 @@ env:
     DOCKER_PASSWORD: /CodeBuild/DOCKER_PASSWORD
 phases:
   install:
-    runtime-versions:
-      php: 7.3
     commands:
       - echo "Installing Docker"
       - cat /etc/os-release
