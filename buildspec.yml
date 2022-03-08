@@ -8,6 +8,10 @@ phases:
     runtime-versions:
       php: 7.3
     commands:
+      - echo "Installing Docker"
+      - cat /etc/os-release
+      - id
+      - uname -a
       - sudo apt-get update -y
       - sudo apt-get install \
              ca-certificates \
