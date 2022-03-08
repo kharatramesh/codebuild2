@@ -10,7 +10,7 @@ phases:
       - cat /etc/os-release
       - id
       - uname -a
-      - systemctl status docker
+    #  - systemctl status docker
       - docker ps
      # - sudo apt-get update -y
      # - sudo apt-get install \
