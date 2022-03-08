@@ -21,5 +21,6 @@ phases:
        - echo "pushing image to docker hub"
        - docker push $DOCKER_USER/buildcode:buidcode1
 artifacts:
-   
+  files:
+    - ./$DOCKER_USER/buildcode:buidcode1 
     
