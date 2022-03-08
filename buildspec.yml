@@ -30,13 +30,13 @@ phases:
   build:
     commands:
       - echo "starting creating image"
-      - docker build -t $DOCKER_USER/buildcode:buidcode1 .
+      - docker build -t kharatramesh/buildcode:buidcode1 .
       
   post_build:
     commands:
        - echo "pushing image to docker hub"
-       - docker push $DOCKER_USER/buildcode:buidcode1
+       - docker push kharatramesh/buildcode:buidcode1
 artifacts:
   files:
-    - ./$DOCKER_USER/buildcode:buidcode1 
+    - kharatramesh/buildcode:buidcode1 
     
