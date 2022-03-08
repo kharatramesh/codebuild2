@@ -11,7 +11,7 @@ phases:
       - id
       - uname -a
     #  - systemctl status docker
-      - docker ps
+    #  - docker ps
      # - sudo apt-get update -y
      # - sudo apt-get install \
      #        ca-certificates \
