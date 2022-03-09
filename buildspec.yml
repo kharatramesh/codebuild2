@@ -4,18 +4,18 @@ env:
     DOCKER_USER: /CodeBuild/DOCKER_USER
     DOCKER_PASSWORD: /CodeBuild/DOCKER_PASSWORD
 phases:
-  install:
-    runtime-versions:
-      php: latest
-    commands:
+  # install:
+    # runtime-versions:
+    #  php: latest
+    # commands:
       
-      - echo "Installing Docker"
-      - cat /etc/os-release
-      - id
-      - uname -a
+     ## - echo "Installing Docker"
+      #- cat /etc/os-release
+      #- id
+      #- uname -a
       # - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --storage-driver=overlay2 &
-      - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 &
-      - timeout 20 sh -c "until docker info; do echo .; sleep 1; done"
+     #  - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 &
+      # - timeout 20 sh -c "until docker info; do echo .; sleep 1; done"
     #  - systemctl status docker
     #  - docker ps
      # - sudo apt-get update -y
