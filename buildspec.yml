@@ -4,14 +4,14 @@ env:
     DOCKER_USER: /CodeBuild/DOCKER_USER
     DOCKER_PASSWORD: /CodeBuild/DOCKER_PASSWORD
 phases:
-  # install:
-    # runtime-versions:
-    #  php: latest
-    # commands:
+  install:
+    runtime-versions:
+      standard: aws/codebuild/standard:5.0
+    commands:
       
-     ## - echo "Installing Docker"
-      #- cat /etc/os-release
-      #- id
+      - echo "Installing Docker"
+      - cat /etc/os-release
+      - id
       #- uname -a
       # - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --storage-driver=overlay2 &
      #  - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 &
