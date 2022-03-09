@@ -5,8 +5,8 @@ env:
     DOCKER_PASSWORD: /CodeBuild/DOCKER_PASSWORD
 phases:
   install:
-    runtime-versions:
-      standard: aws/codebuild/standard:5.0
+  #  runtime-versions:
+   #   standard: aws/codebuild/standard:5.0
     commands:
       
       - echo "Installing Docker"
