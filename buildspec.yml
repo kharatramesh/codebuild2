@@ -5,13 +5,16 @@ env:
     DOCKER_PASSWORD: /CodeBuild/DOCKER_PASSWORD
 phases:
   install:
-    runtime-versions:
-      php: latest
+    # runtime-versions:
+    #   php: latest
     commands:
+      
       - echo "Installing Docker"
       - cat /etc/os-release
       - id
       - uname -a
+      - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --storage-driver=overlay2 &
+      - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"
     #  - systemctl status docker
     #  - docker ps
      # - sudo apt-get update -y
@@ -35,6 +38,7 @@ phases:
   post_build:
     commands:
        - echo "pushing image to docker hub"
+       - docker images
        - docker push kharatramesh/buildcode:buidcode1
 artifacts:
   files:
