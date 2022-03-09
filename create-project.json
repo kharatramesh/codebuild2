@@ -9,9 +9,10 @@
     "environment": {
         "type": "LINUX_CONTAINER",
          "image": "docker:dind",
-        "computeType": "BUILD_GENERAL1_SMALL"
+        "computeType": "BUILD_GENERAL1_SMALL",
+        "privilegedMode": true
     },
-    "privilegedMode": true,
+    
     "serviceRole": "codebuildrole",
     
     "artifacts": {
