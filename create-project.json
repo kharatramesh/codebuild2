@@ -1,6 +1,6 @@
 {
-    "name": "gitproject5",
-    "description": "gitproject5",
+    "name": "gitproject6",
+    "description": "gitproject6",
     "source": {
       "type": "GITHUB",
       "location": "https://github.com/kharatramesh/codebuild1"
