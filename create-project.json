@@ -3,7 +3,7 @@
     "description": "gitproject8",
     "source": {
       "type": "GITHUB",
-      "location": "https://github.com/kharatramesh/codebuild1"
+      "location": "https://github.com/kharatramesh/codebuild2"
       
     },
     "environment": {
