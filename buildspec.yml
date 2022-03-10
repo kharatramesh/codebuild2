@@ -18,12 +18,13 @@ phases:
     commands:
       - echo "starting creating image"
       - docker build -t $DOCKER_USER/buildcode2:buidcode2 .
-      
+      - docker tag $DOCKER_USER/buildcode2:buidcode2 public.ecr.aws/s4x3d8h0/globalologic:samosav1.0
   post_build:
     commands:
        - echo "pushing image to docker hub"
        - docker images
        - docker push $DOCKER_USER/buildcode2:buidcode2
+       - docker push public.ecr.aws/s4x3d8h0/globalologic:samosav1.0
 artifacts:
   files:
     - $DOCKER_USER/buildcode2:buidcode2 
