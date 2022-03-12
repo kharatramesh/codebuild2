@@ -4,12 +4,23 @@ files:
   - source: /index.html
     destination: /var/www/html
 hooks:
+  ApplicationStop:
+    - location: code/stop.sh 
+      runas: root
+      timeout: 100
   BeforeInstall:
-    runas: root
-    timeout: 100
-    commands:
-      yum install httpd -y
+    - location: code/install.sh 
+      runas: root
+      timeout: 100
   AfterInstall:
-    runas: root
-    commands:
-      systemctl enable --now httpd 
+    - location: code/copycode.sh 
+      runas: root
+      timeout: 100
+  ApplicationStart:
+    - location: code/start.sh 
+      runas: root
+      timeout: 100 
+  ValidateService:
+    - location: code/check.sh 
+      runas: root
+      timeout: 100
