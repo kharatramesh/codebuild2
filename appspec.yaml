@@ -1,0 +1,20 @@
+version: 0.0
+os: linux
+files:
+  - source: /index.html
+    destination: /var/www/html
+hooks:
+  ApplicationStop:
+    runas: root
+    timeout: 100
+    commands:
+       systemctl stop httpd
+  BeforeInstall:
+    runas: root
+    timeout: 100
+    commands:
+      yum install httpd -y
+  AfterInstall:
+    runas: root
+    commands:
+      systemctl enable --now httpd 
